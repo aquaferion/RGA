@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이온 깔때기 RGA 솔루션 인포그래픽</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .kpi-box {
+            background-color: #CCE0ED;
+            border-left: 5px solid #003F5C;
+        }
+        .arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #34657F;
+            padding: 1rem 0;
+        }
+        .flow-box {
+            border: 2px solid #99B2C8;
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8 max-w-7xl">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-black text-[#003F5C] mb-2">RGA 성능 혁신: 이온 깔때기 솔루션</h1>
+            <p class="text-lg text-[#34657F]">기존 이온 렌즈의 한계를 넘어선 차세대 잔류 가스 분석 기술</p>
+        </header>
+
+        <main class="space-y-12">
+            <section class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-white rounded-lg shadow-md p-8">
+                <div class="md:col-span-2 text-center mb-4">
+                    <h2 class="text-3xl font-bold text-[#003F5C]">기존 RGA 기술의 문제점</h2>
+                    <p class="mt-2 text-[#34657F]">전자 충돌 이온화 소스는 효율적이지만, 생성된 이온을 질량 분석기로 전달하는 기존 이온 렌즈 시스템은 이온 손실이 커 감도와 분해능 저하의 주요 원인이 됩니다.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-center mb-4 text-[#003F5C]">기존 방식: 이온 렌즈</h3>
+                    <div class="space-y-4">
+                        <div class="flow-box p-4 rounded-lg text-center font-semibold">이온 소스 (전자 충돌 이온화)</div>
+                        <div class="arrow">↓</div>
+                        <div class="flow-box p-4 rounded-lg text-center font-semibold text-red-600">이온 렌즈 (낮은 전송 효율)</div>
+                        <div class="arrow">↓</div>
+                        <div class="flow-box p-4 rounded-lg text-center font-semibold">질량 분석기</div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-center mb-4 text-[#003F5C]">혁신적 대안: 이온 깔때기</h3>
+                    <div class="space-y-4">
+                        <div class="flow-box p-4 rounded-lg text-center font-semibold">이온 소스 (전자 충돌 이온화)</div>
+                        <div class="arrow">↓</div>
+                        <div class="flow-box p-4 rounded-lg text-center font-semibold text-green-600">이온 깔때기 (높은 전송 효율)</div>
+                        <div class="arrow">↓</div>
+                        <div class="flow-box p-4 rounded-lg text-center font-semibold">질량 분석기</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-white rounded-lg shadow-md p-8">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-[#003F5C]">이온 깔때기의 작동 원리</h2>
+                    <p class="mt-2 text-[#34657F]">RF 전압과 DC 전압의 정교한 조합으로 이온을 손실 없이 포획하고, 좁은 빔으로 집중시켜 질량 분석기로 전달합니다.</p>
+                </div>
+                <div class="flex flex-col md:flex-row justify-around items-center space-y-4 md:space-y-0 md:space-x-4">
+                     <div class="text-center p-4">
+                        <div class="w-24 h-24 rounded-full bg-[#CCE0ED] flex items-center justify-center mx-auto mb-2">
+                           <span class="text-4xl font-black text-[#003F5C]">1</span>
+                        </div>
+                        <h4 class="font-bold text-lg">RF 트래핑</h4>
+                        <p>RF 전압이 이온을 중심축에 안정적으로 가둡니다.</p>
+                    </div>
+                    <div class="text-2xl text-[#668BA4] hidden md:block">&rarr;</div>
+                     <div class="text-center p-4">
+                        <div class="w-24 h-24 rounded-full bg-[#CCE0ED] flex items-center justify-center mx-auto mb-2">
+                            <span class="text-4xl font-black text-[#003F5C]">2</span>
+                        </div>
+                        <h4 class="font-bold text-lg">DC 이온 유도</h4>
+                        <p>DC 전압이 이온을 깔때기 출구로 이동시킵니다.</p>
+                    </div>
+                     <div class="text-2xl text-[#668BA4] hidden md:block">&rarr;</div>
+                     <div class="text-center p-4">
+                        <div class="w-24 h-24 rounded-full bg-[#CCE0ED] flex items-center justify-center mx-auto mb-2">
+                            <span class="text-4xl font-black text-[#003F5C]">3</span>
+                        </div>
+                        <h4 class="font-bold text-lg">고효율 빔 형성</h4>
+                        <p>손실 없이 집중된 이온 빔을 생성합니다.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="text-center">
+                 <h2 class="text-3xl font-bold text-[#003F5C] mb-8">핵심 성능 비교</h2>
+                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-xl font-bold text-[#003F5C] mb-4">감도 (이온 전송 효율)</h3>
+                        <p class="text-sm text-[#34657F] mb-4">이온 깔때기는 이온 손실을 최소화하여 기존 방식 대비 월등히 높은 이온 전송 효율을 보이며, 이는 RGA의 전반적인 감도 향상으로 직결됩니다.</p>
+                        <div class="chart-container">
+                            <canvas id="sensitivityChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-xl font-bold text-[#003F5C] mb-4">질량 분해능</h3>
+                        <p class="text-sm text-[#34657F] mb-4">균일하고 집중된 이온 빔은 질량 필터의 분리 능력을 극대화하여, 질량이 유사한 가스 분자를 명확하게 구분할 수 있게 합니다.</p>
+                        <div class="chart-container">
+                             <canvas id="resolutionChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-xl font-bold text-[#003F5C] mb-4">시스템 소형화</h3>
+                        <p class="text-sm text-[#34657F] mb-4">이온 빔을 고효율로 집중시켜, 질량 분석기(Mass Filter, Ion Trap) 자체의 크기를 줄일 수 있어 전체 시스템의 소형화 및 경량화가 가능합니다.</p>
+                         <div class="chart-container">
+                             <canvas id="sizeChart"></canvas>
+                        </div>
+                    </div>
+                     <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-xl font-bold text-[#003F5C] mb-4">작동 압력 범위</h3>
+                        <p class="text-sm text-[#34657F] mb-4">이온 깔때기는 상대적으로 높은 압력에서도 작동하여 복잡한 다단계 고진공 시스템의 필요성을 줄여, 시스템 비용과 유지보수 부담을 낮춥니다.</p>
+                         <div class="chart-container">
+                            <canvas id="pressureChart"></canvas>
+                        </div>
+                    </div>
+                 </div>
+            </section>
+
+            <footer class="text-center mt-12 bg-[#003F5C] text-white rounded-lg shadow-md p-8">
+                <h2 class="text-3xl font-bold">결론: RGA 기술의 새로운 표준</h2>
+                <p class="mt-4 max-w-3xl mx-auto">이온 깔때기 기술은 RGA의 감도와 분해능을 한 차원 높이는 동시에 시스템의 소형화와 경제성을 확보하는 혁신적인 솔루션입니다. 반도체, 디스플레이, 신소재 등 최첨단 산업 분야에서 정밀 잔류 가스 분석의 새로운 가능성을 제시합니다.</p>
+            </footer>
+
+        </div>
+    </main>
+
+    <script>
+        const brilliantBlues = {
+            dark: '#003F5C',
+            medium: '#34657F',
+            light: '#668BA4',
+            lighter: '#99B2C8',
+            lightest: '#CCE0ED'
+        };
+        const accent = '#F7B801';
+
+        const processLabel = (label) => {
+            const maxLength = 16;
+            if (label.length <= maxLength) {
+                return label;
+            }
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + ' ' + word).trim().length > maxLength) {
+                    lines.push(currentLine.trim());
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            }
+            if (currentLine) {
+                lines.push(currentLine.trim());
+            }
+            return lines;
+        };
+        
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+              return label.join(' ');
+            } else {
+              return label;
+            }
+        };
+        
+        const defaultChartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'top',
+                    labels: {
+                        color: brilliantBlues.dark,
+                        font: {
+                            weight: 'bold'
+                        }
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        title: tooltipTitleCallback
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    grid: {
+                        color: '#e0e0e0'
+                    },
+                    ticks: {
+                        color: brilliantBlues.medium
+                    }
+                },
+                x: {
+                    grid: {
+                        display: false
+                    },
+                    ticks: {
+                        color: brilliantBlues.medium,
+                         font: {
+                            size: 12
+                        }
+                    }
+                }
+            }
+        };
+
+        const sensitivityCtx = document.getElementById('sensitivityChart').getContext('2d');
+        new Chart(sensitivityCtx, {
+            type: 'bar',
+            data: {
+                labels: ['기존 이온 렌즈', '이온 깔때기'].map(processLabel),
+                datasets: [{
+                    label: '이온 전송 효율 (%)',
+                    data: [8, 95],
+                    backgroundColor: [brilliantBlues.light, brilliantBlues.dark],
+                    borderColor: [brilliantBlues.medium, brilliantBlues.dark],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                ...defaultChartOptions,
+                 indexAxis: 'y',
+                 scales: {
+                    x: {
+                        beginAtZero: true,
+                         max: 100,
+                        grid: { color: '#e0e0e0' },
+                        ticks: { color: brilliantBlues.medium }
+                    },
+                    y: {
+                        grid: { display: false },
+                        ticks: { color: brilliantBlues.medium, font: {size: 14, weight: 'bold'} }
+                    }
+                }
+            }
+        });
+
+        const generatePeak = (center, width, height, numPoints) => {
+            let data = [];
+            for (let i = 0; i < numPoints; i++) {
+                let x = i * (100 / numPoints);
+                let y = height * Math.exp(-((x - center) ** 2) / (2 * width ** 2));
+                data.push({x: x, y: y});
+            }
+            return data;
+        };
+
+        const resolutionCtx = document.getElementById('resolutionChart').getContext('2d');
+        new Chart(resolutionCtx, {
+            type: 'line',
+            data: {
+                datasets: [
+                {
+                    label: '기존 이온 렌즈',
+                    data: [
+                        ...generatePeak(40, 15, 0.8, 100),
+                        ...generatePeak(60, 15, 0.7, 100).map(p => ({ x: p.x, y: p.y + generatePeak(40, 15, 0.8, 100).find(g => g.x === p.x).y }))
+                    ].sort((a,b)=>a.x - b.x),
+                    borderColor: brilliantBlues.light,
+                    backgroundColor: 'rgba(102, 139, 164, 0.2)',
+                    fill: true,
+                    tension: 0.4,
+                    pointRadius: 0
+                },
+                {
+                    label: '이온 깔때기',
+                    data: [...generatePeak(40, 3, 1, 100), ...generatePeak(60, 3, 0.9, 100)],
+                    borderColor: brilliantBlues.dark,
+                    backgroundColor: 'rgba(0, 63, 92, 0.2)',
+                    fill: true,
+                    tension: 0.4,
+                    pointRadius: 0
+                }]
+            },
+            options: {
+                ...defaultChartOptions,
+                scales: {
+                    y: {
+                        title: { display: true, text: '상대 강도', color: brilliantBlues.dark },
+                        ticks: { color: brilliantBlues.medium }
+                    },
+                    x: {
+                        type: 'linear',
+                        title: { display: true, text: '질량 대 전하비 (m/z)', color: brilliantBlues.dark },
+                        ticks: { color: brilliantBlues.medium }
+                    }
+                }
+            }
+        });
+
+        const sizeCtx = document.getElementById('sizeChart').getContext('2d');
+        new Chart(sizeCtx, {
+            type: 'bar',
+            data: {
+                labels: ['기존 질량 분석기', '이온 깔때기 적용 분석기'].map(processLabel),
+                datasets: [{
+                    label: '상대적 시스템 크기',
+                    data: [100, 45],
+                    backgroundColor: [brilliantBlues.light, brilliantBlues.dark],
+                    borderColor: [brilliantBlues.medium, brilliantBlues.dark],
+                    borderWidth: 1
+                }]
+            },
+            options: { ...defaultChartOptions }
+        });
+
+        const pressureCtx = document.getElementById('pressureChart').getContext('2d');
+        new Chart(pressureCtx, {
+            type: 'bar',
+            data: {
+                labels: ['기존 이온 렌즈', '이온 깔때기'].map(processLabel),
+                datasets: [{
+                    label: '최대 작동 압력 (Torr)',
+                    data: [0.00001, 1],
+                    backgroundColor: [brilliantBlues.light, brilliantBlues.dark],
+                    borderColor: [brilliantBlues.medium, brilliantBlues.dark],
+                    borderWidth: 1,
+                }]
+            },
+            options: {
+                ...defaultChartOptions,
+                scales: {
+                    y: {
+                        type: 'logarithmic',
+                        beginAtZero: false,
+                        title: { display: true, text: '압력 (Torr)', color: brilliantBlues.dark},
+                        min: 0.000001,
+                        max: 10,
+                        ticks: {
+                             color: brilliantBlues.medium
+                        }
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: { color: brilliantBlues.medium, font: {size: 14, weight: 'bold'}}
+                    }
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>
